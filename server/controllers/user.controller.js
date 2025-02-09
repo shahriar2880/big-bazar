@@ -247,6 +247,7 @@ export async function updateUserDetails(request,response){
         const userId = request.userId //auth middleware
         const { name, email, mobile, password } = request.body 
 
+        
         let hashPassword = ""
 
         if(password){
