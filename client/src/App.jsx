@@ -7,12 +7,13 @@ import Header from './component/Header'
 function App() {
   
   return (
-    
-      <main className='min-h-[78vh]'>
-        <Header/>
+    <>
+    <Header/>
+      <main className='h-[78vh]'>
         <Outlet/>
-        <Footer/>
       </main>
+      <Footer/>
+    </>
       
   )
 }
