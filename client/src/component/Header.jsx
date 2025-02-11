@@ -5,7 +5,7 @@ const Header = () => {
   return (
     //header tag use for seo frendly
     <header className="h-16 shadow-md sticky top-0">
-      <div>
+      <div className="container mx-auto">
         {/* logo */}
         <div>
             <div>
