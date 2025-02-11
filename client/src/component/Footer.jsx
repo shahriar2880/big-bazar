@@ -10,7 +10,7 @@ const Footer = () => {
         <p>&copy; 2025 Big-Bazar. All rights reserved.</p>
 
             <div className='flex items-center gap-4 justify-center text-2xl'>
-                <a href='' className='hover:text-primary-100'>
+                <a href='' className='hover:text-primary-200'>
                     <FaFacebook/>
                 </a>
                 <a href='' className='hover:text-primary-100'>
