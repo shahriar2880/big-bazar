@@ -8,7 +8,7 @@ import { StrictMode } from 'react'
 // import { store } from './store/store.js'
 
 createRoot(document.getElementById('root')).render(
-  <StrictMode>
+  // <StrictMode>
     <RouterProvider router={router}/>
-  </StrictMode>,
+  // </StrictMode>,
 )
