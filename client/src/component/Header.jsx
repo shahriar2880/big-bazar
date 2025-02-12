@@ -1,5 +1,6 @@
 import React from "react";
 import logo from "../assets/big-bazar.png";
+import '../index.css'
 import Search from "./Search";
 import { FaRegCircleUser } from "react-icons/fa6";
 import { Link, useLocation } from "react-router-dom";
@@ -18,8 +19,8 @@ const Header = () => {
     // }
   return (
     //header tag use for seo frendly
-    <header className="h-30 py-2 lg:h-22 lg:shadow-md sticky top-0 bg-red-500 flex flex-col justify-center">
-      <div className="container mx-auto flex items-center h-full justify-between">
+    <header className="h-30 min-w-[1px] py-2 lg:h-22 lg:shadow-md sticky top-0 bg-red-500 flex flex-col justify-center">
+      <div className="container mx-auto flex items-center h-full flexcol justify-between">
         {/* logo */}
         <div className="h-full">
           <Link to={"/"} className="h-full flex justify-center items-center">
@@ -57,7 +58,7 @@ const Header = () => {
         </div>
         {/* login and my cart */}
       </div>
-      <div className="container mx-auto"><Search/></div>
+      <div className="container mx-auto px-2 lg:hidden search"><Search/></div>
     </header>
   );
 };
