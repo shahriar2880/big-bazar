@@ -7,8 +7,10 @@ import { Link, useLocation } from "react-router-dom";
 import useMobile from "../hooks/useMobile";
 
 const Header = () => {
-    // const [isMobile] = useMobile()
-    // const location = useLocation()
+    const [isMobile] = useMobile()
+    const location = useLocation()
+    const isSearchPage = location.pathname === "/search"
+
     // const handleMobileUser = ()=>{
     //     if(!user._id){
     //         navigate("/login")
@@ -20,6 +22,9 @@ const Header = () => {
   return (
     //header tag use for seo frendly
     <header className="h-30 min-w-[1px] py-2 lg:h-22 lg:shadow-md sticky top-0 bg-red-500 flex flex-col justify-center">
+      {
+        
+      }
       <div className="container mx-auto flex items-center h-full flexcol justify-between">
         {/* logo */}
         <div className="h-full">
