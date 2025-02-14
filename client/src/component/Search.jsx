@@ -12,7 +12,7 @@ const Search = () => {
     const [isSearchPage,setIsSearchPage] = useState(false)
     const [ isMobile ] = useMobile()
     const params = useLocation()
-    const searchText = params.search.slice(3)
+    const searchText = params.search.slice(17)
 
 
     useEffect(()=>{
@@ -31,7 +31,7 @@ const Search = () => {
     }
 
   return (
-    <div className='w-full  min-w-[300px] lg:min-w-[420px] h-11 lg:h-12 rounded-lg border overflow-hidden flex items-center text-neutral-500 bg-slate-50 group focus-within:border-primary-200 '>
+    <div className='w-full search  min-w-[300px] lg:min-w-[420px] h-11 lg:h-12 rounded-lg border overflow-hidden flex items-center text-neutral-500 bg-slate-50 group focus-within:border-primary-200 '>
         <div>
             {
                 (isMobile && isSearchPage ) ? (
@@ -78,13 +78,13 @@ const Search = () => {
                      </div>
                 ) : (
                     //when i was search page
-                    <div className='w-full h-full'>
+                    <div className='w-[90vh] h-full'>
                         <input
                             type='text'
                             placeholder='Search for atta dal and more.'
                             autoFocus
                             defaultValue={searchText}
-                            className='bg-transparent w-full h-full outline-none'
+                            className='bg-transparent w-full h-full search-input outline-none'
                             onChange={handleOnChange}
                         />
                     </div>
