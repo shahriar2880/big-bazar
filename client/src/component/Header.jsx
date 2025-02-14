@@ -3,6 +3,7 @@ import logo from "../assets/big-bazar.png";
 import "../index.css";
 import Search from "./Search";
 import { FaRegCircleUser } from "react-icons/fa6";
+import { BsCart4 } from "react-icons/bs";
 import { Link, useLocation } from "react-router-dom";
 import useMobile from "../hooks/useMobile";
 
@@ -21,9 +22,9 @@ const Header = () => {
   // }
   return (
     //header tag use for seo frendly
-    <header className="h-30 min-w-[1px] py-2 lg:h-22 lg:shadow-md sticky top-0 bg-rose-700 flex flex-col justify-center">
+    <header className=" h-30 min-w-[1px] py-2 px-2  lg:h-22 lg:shadow-md sticky top-0 bg-rose-700 flex flex-col justify-center">
       {!(isSearchPage && isMobile) && (
-        <div className="container mx-auto px-2 flex items-center h-full flexcol justify-between">
+        <div className="container mx-auto flex items-center h-full flexcol justify-between">
           {/* logo */}
           <div className="h-full">
             <Link to={"/"} className="h-full flex justify-center items-center">
@@ -57,13 +58,21 @@ const Header = () => {
             >
               <FaRegCircleUser size={26} />
             </button>
-            <div className="hidden lg:block">login and my card</div>
+
+            {/* desktop */}
+            <div className="hidden lg:flex items-center gap-10">
+              <Link>Login</Link>
+              <button className="flex items-center gap-2 p-2 rounded-md bg-green-800">
+                <div className="animate-bounce"><BsCart4 size={26}/></div>
+                <div className="font-semibold"><p>My Cart</p></div>
+              </button>
+            </div>
           </div>
           {/* login and my cart */}
         </div>
       )}
 
-      <div className="container mx-auto px-2 lg:hidden search">
+      <div className="container mx-auto lg:hidden sm-search">
         <Search />
       </div>
     </header>
