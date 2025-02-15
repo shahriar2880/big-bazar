@@ -2,7 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-
+body{
+  @apply bg-blue-50;
+}
 html, header {
     overflow-x: hidden; /* Prevent horizontal scrolling */
     max-width: 100%; /* Ensure the width doesn't exceed the viewport */
