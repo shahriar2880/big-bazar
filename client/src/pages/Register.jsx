@@ -67,94 +67,100 @@ const Register = () => {
   };
   return (
     <section className="w-full container mx-auto px-2">
-      <div className="bg-white my-4 w-full max-w-lg mx-auto rounded p-7">
-        <p className="text-center">Welcome to Big Bazar!!</p>
-        <form className="grid gap-4 mt-6" onSubmit={handleSubmit}>
-          <div className="grid gap-1">
-            <label htmlFor="name">Name :</label>
-            <input
-              type="text"
-              id="name"
-              autoFocus
-              className="bg-blue-50 p-2 border rounded outline-none focus:border-primary-200"
-              name="name"
-              value={data.name}
-              onChange={handleChange}
-              placeholder="Enter your name"
-            />
-          </div>
-          <div className="grid gap-1">
-            <label htmlFor="email">Email :</label>
-            <input
-              type="email"
-              id="email"
-              className="bg-blue-50 p-2 border rounded outline-none focus:border-primary-200"
-              name="email"
-              value={data.email}
-              onChange={handleChange}
-              placeholder="Enter your email"
-            />
-          </div>
-          <div className="grid gap-1">
-            <label htmlFor="password">Password :</label>
-            <div className="bg-blue-50 p-2 border rounded outline-none flex items-center focus:border-primary-200">
-              <input
-                type={showPassword ? "text" : "password"}
-                id="password"
-                className="w-full outline-none bg-blue-50"
-                name="password"
-                value={data.password}
-                onChange={handleChange}
-                placeholder="Enter your password"
-              />
-              <div
-                onClick={() => setShowPassword((preve) => !preve)}
-                className="cursor-pointer"
-              >
-                {showPassword ? <FaRegEye /> : <FaRegEyeSlash />}
-              </div>
-            </div>
-          </div>
-          <div className="grid gap-1">
-            <label htmlFor="confirmPassword">Confirm Password :</label>
-            <div className="bg-blue-50 p-2 border rounded flex items-center focus-within:border-primary-200">
-              <input
-                type={showConfirmPassword ? "text" : "password"}
-                id="confirmPassword"
-                className="w-full outline-none bg-blue-50"
-                name="confirmPassword"
-                value={data.confirmPassword}
-                onChange={handleChange}
-                placeholder="Enter your confirm password"
-              />
-              <div
-                onClick={() => setShowConfirmPassword((preve) => !preve)}
-                className="cursor-pointer"
-              >
-                {showConfirmPassword ? <FaRegEye /> : <FaRegEyeSlash />}
-              </div>
-            </div>
-          </div>
-          <button
-            disabled={!validedValue}
-            className={` ${
-              validedValue ? "bg-green-800 hover:bg-green-700" : "bg-gray-500"
-            }    text-white py-2 rounded font-semibold my-3 tracking-wide`}
-          >
-            Register
-          </button>
-        </form>
-        <p>
-          Already have account ?{" "}
-          <Link
-            to={"/login"}
-            className="font-semibold text-green-700 hover:text-green-800"
-          >
-            Login
-          </Link>
-        </p>
+  <div className="bg-white my-4 w-full max-w-lg mx-auto rounded flex flex-col p-2">
+    <p className="text-center text-lg sm:text-xl">Welcome to Big Bazar!!</p>
+    <form className="grid gap-4 mt-6 p-2" onSubmit={handleSubmit}>
+      {/* Name Input */}
+      <div className="grid gap-1">
+        <label htmlFor="name" className="text-sm sm:text-base">Name :</label>
+        <input
+          type="text"
+          id="name"
+          autoFocus
+          className="bg-blue-50 p-2 border rounded outline-none focus:border-primary-200 w-full"
+          name="name"
+          value={data.name}
+          onChange={handleChange}
+          placeholder="Enter your name"
+        />
       </div>
-    </section>
+      {/* Email Input */}
+      <div className="grid gap-1">
+        <label htmlFor="email" className="text-sm sm:text-base">Email :</label>
+        <input
+          type="email"
+          id="email"
+          className="bg-blue-50 p-2 border rounded outline-none focus:border-primary-200 w-full"
+          name="email"
+          value={data.email}
+          onChange={handleChange}
+          placeholder="Enter your email"
+        />
+      </div>
+      {/* Password Input */}
+      <div className="grid gap-1">
+        <label htmlFor="password" className="text-sm sm:text-base">Password :</label>
+        <div className="bg-blue-50 p-2 border rounded outline-none flex items-center focus:border-primary-200">
+          <input
+            type={showPassword ? "text" : "password"}
+            id="password"
+            className="w-full outline-none bg-blue-50"
+            name="password"
+            value={data.password}
+            onChange={handleChange}
+            placeholder="Enter your password"
+          />
+          <div
+            onClick={() => setShowPassword((preve) => !preve)}
+            className="cursor-pointer"
+          >
+            {showPassword ? <FaRegEye /> : <FaRegEyeSlash />}
+          </div>
+        </div>
+      </div>
+      {/* Confirm Password Input */}
+      <div className="grid gap-1">
+        <label htmlFor="confirmPassword" className="text-sm sm:text-base">Confirm Password :</label>
+        <div className="bg-blue-50 p-2 border rounded flex items-center focus-within:border-primary-200">
+          <input
+            type={showConfirmPassword ? "text" : "password"}
+            id="confirmPassword"
+            className="w-full outline-none bg-blue-50"
+            name="confirmPassword"
+            value={data.confirmPassword}
+            onChange={handleChange}
+            placeholder="Enter your confirm password"
+          />
+          <div
+            onClick={() => setShowConfirmPassword((preve) => !preve)}
+            className="cursor-pointer"
+          >
+            {showConfirmPassword ? <FaRegEye /> : <FaRegEyeSlash />}
+          </div>
+        </div>
+      </div>
+      {/* Register Button */}
+      <button
+        disabled={!validedValue}
+        className={`${
+          validedValue ? "bg-green-800 hover:bg-green-700" : "bg-gray-500"
+        } text-white py-2 rounded font-semibold my-3 tracking-wide w-full`}
+      >
+        Register
+      </button>
+      {/* Login Link */}
+      <p className="w-full text-sm sm:text-base">
+        Already have an account?{" "}
+        <Link
+          to={"/login"}
+          className="font-semibold text-green-700 hover:text-green-800"
+        >
+          Login
+        </Link>
+      </p>
+    </form>
+  </div>
+</section>
   );
 };
 

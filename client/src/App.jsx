@@ -10,7 +10,7 @@ function App() {
   return (
     <>
     <Header/>
-      <main className='h-[78vh]'>
+      <main className='h-[100%]'>
         <Outlet/>
       </main>
       <Footer/>

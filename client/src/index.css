@@ -1,20 +1,43 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url("https://fonts.googleapis.com/css?family=Tangerine");
 
-body{
+body {
+  font-family: "Tangerine", serif;
+  font-size: 500;
   @apply bg-blue-50;
 }
-html, header {
-    overflow-x: hidden; /* Prevent horizontal scrolling */
-    max-width: 100%; /* Ensure the width doesn't exceed the viewport */
-  }
+html,
+header {
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+  max-width: 100%; /* Ensure the width doesn't exceed the viewport */
+}
 
-@media (max-width: 150px) {
+@media (max-width: 320px) {
   .flexcol {
     display: flex;
     flex-direction: column;
   }
+  form input{
+    width: auto;
+  }
+  .sm-search{
+    overflow: scroll;
+  }
+  .text-sm {
+    font-size: 0.875rem; /* 14px */
+  }
+  .text-base {
+    font-size: 1rem; /* 16px */
+  }
+  .p-2 {
+    padding: 0.5rem; /* 8px */
+  }
+  .gap-1 {
+    gap: 0.25rem; /* 4px */
+  }
+  .gap-4 {
+    gap: 1rem; /* 16px */
+  }
 }
-
-

@@ -81,7 +81,7 @@ const Header = () => {
         </div>
       )}
 
-      <div className="container mx-auto px-4 lg:hidden sm-search">
+      <div className="container sm-search mx-auto px-4 lg:hidden sm-search">
         <Search />
       </div>
     </header>
