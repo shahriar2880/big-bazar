@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import toast from "react-hot-toast";
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa6";
 import { Link, useNavigate } from "react-router-dom";
+import SummaryApi from "../common/SummaryApi";
+import Axios from "../utils/Axios";
 
 
 const Register = () => {
@@ -36,6 +38,31 @@ const Register = () => {
       toast.error("password and confirm password must be same");
       return;
     }
+    try {
+      const response = await Axios({
+          ...SummaryApi.register,
+          data : data
+      })
+      
+      if(response.data.error){
+          toast.error(response.data.message)
+      }
+
+      if(response.data.success){
+          toast.success(response.data.message)
+          setData({
+              name : "",
+              email : "",
+              password : "",
+              confirmPassword : ""
+          })
+          navigate("/login")
+      }
+
+  } catch (error) {
+      AxiosToastError(error)
+  }
+
   };
   return (
     <section className="w-full container mx-auto px-2">
