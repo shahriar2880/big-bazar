@@ -1,6 +1,8 @@
 import React, { useState } from "react";
+import toast from "react-hot-toast";
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa6";
 import { Link, useNavigate } from "react-router-dom";
+
 
 const Register = () => {
   const [data, setData] = useState({
@@ -25,7 +27,7 @@ const Register = () => {
     });
   };
 
-  const valideValue = Object.values(data).every(el => el)
+  const validedValue = Object.values(data).every(el => el)
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -106,9 +108,9 @@ const Register = () => {
             </div>
           </div>
           <button
-            disabled={!valideValue}
+            disabled={!validedValue}
             className={` ${
-              valideValue ? "bg-green-800 hover:bg-green-700" : "bg-gray-500"
+              validedValue ? "bg-green-800 hover:bg-green-700" : "bg-gray-500"
             }    text-white py-2 rounded font-semibold my-3 tracking-wide`}
           >
             Register

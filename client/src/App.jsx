@@ -2,6 +2,7 @@ import { Outlet } from 'react-router-dom'
 import './App.css'
 import Footer from './component/Footer'
 import Header from './component/Header'
+import toast, {Toaster} from 'react-hot-toast';
 
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
         <Outlet/>
       </main>
       <Footer/>
+      <Toaster/>
     </>
       
   )
