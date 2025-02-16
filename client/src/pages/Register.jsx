@@ -67,11 +67,11 @@ const Register = () => {
           </div>
           <div className="grid gap-1">
             <label htmlFor="password">Password :</label>
-            <div className="bg-blue-50 p-2 border rounded outline-none flex items-center focus-within:border-primary-200">
+            <div className="bg-blue-50 p-2 border rounded outline-none flex items-center focus:border-primary-200">
               <input
                 type={showPassword ? "text" : "password"}
                 id="password"
-                className="w-full outline-none"
+                className="w-full outline-none bg-blue-50"
                 name="password"
                 value={data.password}
                 onChange={handleChange}
@@ -91,7 +91,7 @@ const Register = () => {
               <input
                 type={showConfirmPassword ? "text" : "password"}
                 id="confirmPassword"
-                className="w-full outline-none"
+                className="w-full outline-none bg-blue-50"
                 name="confirmPassword"
                 value={data.confirmPassword}
                 onChange={handleChange}
