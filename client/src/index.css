@@ -8,6 +8,7 @@ body {
   font-size: 500;
   @apply bg-blue-50;
 }
+
 html,
 header {
   overflow-x: hidden; /* Prevent horizontal scrolling */
@@ -23,7 +24,7 @@ header {
     width: auto;
   }
   .sm-search{
-    overflow: scroll;
+    overflow: scroll   ;
   }
   .text-sm {
     font-size: 0.875rem; /* 14px */
