@@ -47,7 +47,7 @@ export async function registerUserController(request,response){
 
         const verifyEmail = await sendEmail({
             sendTo : email,
-            subject : "Verify email from binkeyit",
+            subject : "Verify email from big bazar",
             html : verifyEmailTemplate({
                 name,
                 url : VerifyEmailUrl
@@ -304,7 +304,7 @@ export async function forgotPasswordController(request,response) {
 
         await sendEmail({
             sendTo : email,
-            subject : "Forgot password from Binkeyit",
+            subject : "Forgot password from Big Bazar",
             html : forgotPasswordTemplate({
                 name : user.name,
                 otp : otp
@@ -312,7 +312,7 @@ export async function forgotPasswordController(request,response) {
         })
 
         return response.json({
-            message : "check your email",
+            message : "OTP sent to your email. Please check your inbox or spam folder.",
             error : false,
             success : true
         })

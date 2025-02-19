@@ -1,31 +1,40 @@
-import { Resend } from 'resend';
-import dotenv from 'dotenv'
-dotenv.config()
+import nodemailer from 'nodemailer';
+import dotenv from 'dotenv';
+dotenv.config();
 
-if(!process.env.RESEND_API){
-    console.log("Provide RESEND_API in side the .env file")
+// Check if email credentials are provided in .env
+if (!process.env.EMAIL_USER || !process.env.EMAIL_PASS) {
+    console.log("Provide EMAIL_USER and EMAIL_PASS in the .env file");
 }
 
-const resend = new Resend(process.env.RESEND_API);
+// Create a Nodemailer transporter
+const transporter = nodemailer.createTransport({
+    service: 'gmail', // Use Gmail as the email service
+    auth: {
+        user: process.env.EMAIL_USER, // Your Gmail email address
+        pass: process.env.EMAIL_PASS, // Your Gmail app password
+    },
+    connectionTimeout: 10000, // 10 seconds
+});
 
-const sendEmail = async({sendTo, subject, html })=>{
+// Function to send an email
+const sendEmail = async ({ sendTo, subject, html }) => {
     try {
-        const { data, error } = await resend.emails.send({
-            from: 'Big-Bazar <noreply@shahriarreza435@gmail.com>',
-            to: sendTo,
-            subject: subject,
-            html: html,
-        });
+        const mailOptions = {
+            from: `Big-Bazar <${process.env.EMAIL_USER}>`, // Sender address
+            to: sendTo, // Recipient address
+            subject: subject, // Email subject
+            html: html, // HTML content of the email
+        };
 
-        if (error) {
-            return console.error({ error });
-        }
-
-        return data
+        // Send the email
+        const info = await transporter.sendMail(mailOptions);
+        console.log("Email sent successfully:", info.response);
+        return info;
     } catch (error) {
-        console.log(error)
+        console.error("Error sending email:", error);
+        throw new Error("Failed to send email");
     }
-}
+};
 
-export default sendEmail
-
+export default sendEmail;
