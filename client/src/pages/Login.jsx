@@ -104,7 +104,7 @@ const Login = () => {
             disabled={!validedValue}
             className={`${
               validedValue ? "bg-green-800 hover:bg-green-700" : "bg-gray-500"
-            } text-white py-2 rounded font-semibold my-3 tracking-wide w-full`}
+            } text-white py-2 rounded font-semibold tracking-wide w-full`}
           >
             Login
           </button>
