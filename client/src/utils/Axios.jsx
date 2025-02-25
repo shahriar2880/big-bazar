@@ -49,6 +49,23 @@ Axios.interceptors.request.use(
     }
 )
 
+const refreshAccessToken = async(refreshToken)=>{
+    try {
+        const response = await Axios({
+            ...SummaryApi.refreshToken,
+            headers : {
+                Authorization : `Bearer ${refreshToken}`
+            }
+        })
+
+        const accessToken = response.data.data.accessToken
+        localStorage.setItem('accesstoken',accessToken)
+        return accessToken
+    } catch (error) {
+        console.log(error)
+    }
+}
+
 
 
 export default Axios
