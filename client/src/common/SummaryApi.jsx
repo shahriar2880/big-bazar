@@ -20,6 +20,10 @@ const SummaryApi = {
     resetPassword : {
         url : '/api/user/reset-password',
         method : 'put'
+    },
+    userDetails : {
+        url : '/api/user/user-details',
+        method : 'get'
     }
 }
 
