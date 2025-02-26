@@ -2,9 +2,11 @@ import React from 'react'
 
 const Home = () => {
   return (
-    <div className='container mx-auto px-4'>
+    <section className='bg-white'>
+      <div className='container mx-auto h-screen'>
       home
     </div>
+    </section>
   )
 }
 

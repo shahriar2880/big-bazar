@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import logo from "../assets/big-bazar.png";
 import "../index.css";
 import Search from "./Search";
@@ -6,14 +6,18 @@ import { FaRegCircleUser } from "react-icons/fa6";
 import { BsCart4 } from "react-icons/bs";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import useMobile from "../hooks/useMobile";
-import {useSelector} from 'react-redux'
+import { useSelector } from "react-redux";
+import { GoTriangleDown, GoTriangleUp } from "react-icons/go";
+import UserMenu from "./UserMenu.jsx";
 
 const Header = () => {
   const [isMobile] = useMobile();
   const location = useLocation();
   const isSearchPage = location.pathname === "/search";
   const navigate = useNavigate();
-  const user = useSelector((state)=> state?.user)
+  const user = useSelector((state) => state?.user);
+  const [openUserMenu, setOpenUserMenu] = useState(false);
+  console.log("user from store", user);
 
   const redirectToLoginPage = () => {
     navigate("/login");
@@ -29,7 +33,7 @@ const Header = () => {
   // }
   return (
     //header tag use for seo frendly
-    <header className=" h-30 min-w-[1px] py-2 px-4  lg:h-22 lg:shadow-md sticky top-0 flex flex-col justify-center gap-1 bg-white">
+    <header className="h-30 min-w-[1px] py-2 px-4 lg:h-22 lg:shadow-md sticky top-0 flex flex-col justify-center gap-1 bg-white overflow-visible">
       {!(isSearchPage && isMobile) && (
         <div className="container mx-auto flex items-center h-full flexcol justify-between">
           {/* logo */}
@@ -68,8 +72,27 @@ const Header = () => {
 
             {/* desktop */}
             <div className="hidden lg:flex items-center gap-10">
-              <button onClick={redirectToLoginPage} className="text-lg p-2 px-4 rounded-md bg-red-700">Login</button>
-              <button className="flex items-center gap-2 p-2 rounded-md bg-green-800">
+            {user?._id ? (
+                <div className="relative">
+                  <div
+                    onClick={() => setOpenUserMenu((prev) => !prev)}
+                    className="flex select-none items-center gap-1 cursor-pointer"
+                  >
+                    <p>Account</p>
+                    {openUserMenu ? <GoTriangleUp size={25} /> : <GoTriangleDown size={25} />}
+                  </div>
+                  {openUserMenu && (
+                    <div className="absolute top-full left-0 z-10 mt-2 min-w-48 rounded-lg bg-white shadow-lg">
+                      <UserMenu user={user} />
+                    </div>
+                  )}
+                </div>
+              ) : (
+                <button onClick={redirectToLoginPage} className="text-lg px-2">
+                  Login
+                </button>
+              )}
+              <button className="flex items-center gap-2 p-2 rounded-md bg-red-600">
                 <div className="animate-bounce">
                   <BsCart4 size={26} />
                 </div>
