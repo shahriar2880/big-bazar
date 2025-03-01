@@ -33,7 +33,7 @@ const Header = () => {
   // }
   return (
     //header tag use for seo frendly
-    <header className="h-30 min-w-[1px] py-2 px-4 lg:h-22 lg:shadow-md sticky top-0 flex flex-col justify-center gap-1 bg-white overflow-visible">
+    <header className="h-30 w-full min-w-[1px] sticky py-2 px-4 lg:h-22 lg:shadow-md top-0 flex flex-col justify-center gap-1 bg-black text-white overflow-visible">
       {!(isSearchPage && isMobile) && (
         <div className="container mx-auto flex items-center h-full flexcol justify-between">
           {/* logo */}
@@ -92,7 +92,7 @@ const Header = () => {
                   Login
                 </button>
               )}
-              <button className="flex items-center gap-2 p-2 rounded-md bg-red-600">
+              <button className="flex items-center gap-2 p-3 rounded-md bg-blue-900">
                 <div className="animate-bounce">
                   <BsCart4 size={26} />
                 </div>
