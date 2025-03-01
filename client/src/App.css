@@ -1,3 +1,14 @@
-home{
-    position: relative;
+/* 
+header.sticky{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: var(--color-black);
+    animation: smoothly 1s forwards;
+    z-index: 9999;
+} */
+
+button .my-cart{
+    background: ffb5a7;
 }
