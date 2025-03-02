@@ -4,8 +4,8 @@
 @import url("https://fonts.googleapis.com/css?family=Tangerine");
 
 body {
-  font-family: "Tangerine", serif;
-  font-size: 500;
+  font-family: "Montserrat", serif;
+  font-size: 600;
   @apply bg-blue-50;
 }
 

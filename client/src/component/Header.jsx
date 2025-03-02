@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import logo from "../assets/big-bazar.png";
 import "../index.css";
+import "../App.css";
 import Search from "./Search";
 import { FaRegCircleUser } from "react-icons/fa6";
 import { BsCart4 } from "react-icons/bs";
@@ -33,7 +34,7 @@ const Header = () => {
   // }
   return (
     //header tag use for seo frendly
-    <header className="h-30 w-full min-w-[1px] sticky py-2 px-4 lg:h-22 lg:shadow-md top-0 flex flex-col justify-center gap-1 bg-amber-100 text-black overflow-visible">
+    <header className="h-30 w-full min-w-[1px] sticky py-2 px-4 lg:h-22 lg:shadow-md top-0 flex flex-col justify-center gap-1 text-black overflow-visible">
       {!(isSearchPage && isMobile) && (
         <div className="container mx-auto flex items-center h-full flexcol justify-between">
           {/* logo */}
@@ -71,7 +72,7 @@ const Header = () => {
             </button>
 
             {/* desktop */}
-            <div className="hidden lg:flex items-center gap-10">
+            <div className="hidden lg:flex items-center gap-10 text-teal-700">
             {user?._id ? (
                 <div className="relative">
                   <div
@@ -92,7 +93,7 @@ const Header = () => {
                   Login
                 </button>
               )}
-              <button className="flex items-center gap-2 p-3 rounded-md my-cart">
+              <button className="flex items-center gap-2 p-3 rounded-md cart">
                 <div className="animate-bounce">
                   <BsCart4 size={26} />
                 </div>

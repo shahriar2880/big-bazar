@@ -8,7 +8,19 @@ header.sticky{
     animation: smoothly 1s forwards;
     z-index: 9999;
 } */
-
-button .my-cart{
-    background: ffb5a7;
+header{
+    background-color: #FDD670;
 }
+/* div.gap-10{
+    background-color: #E04F54;
+} */
+button.cart{
+    background-color: #E04F54;
+    color: white;
+}
+/* button.account{
+    background-color: #E04F54;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+} */

@@ -16,7 +16,7 @@ const UserMenu = () => {
     <div className='text-sm grid gap-2'>
         <Link to={""} className='px-2'>My Order</Link>
         <Link to={""} className='px-2'>Save Address</Link>
-        <button className='px-2 text-center'> Log Out</button>
+        <button className='px-2 text-center account'>Log Out</button>
     </div>
     </div>
   )
