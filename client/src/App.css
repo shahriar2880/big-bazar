@@ -9,14 +9,21 @@ header.sticky{
     z-index: 9999;
 } */
 header{
-    background-color: #FDD670;
+    /* background-color: #FDD670; */
+    background-color: #000;
 }
 /* div.gap-10{
     background-color: #E04F54;
 } */
 button.cart{
+    /* background-color: #E04F54; */
+    color: white;
+    border: 1px solid wheat;
+}
+button.cart:hover{
     background-color: #E04F54;
     color: white;
+    border: 1px solid wheat;
 }
 /* button.account{
     background-color: #E04F54;

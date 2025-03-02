@@ -72,7 +72,7 @@ const Header = () => {
             </button>
 
             {/* desktop */}
-            <div className="hidden lg:flex items-center gap-10 text-teal-700">
+            <div className="hidden lg:flex items-center gap-10 text-white">
             {user?._id ? (
                 <div className="relative">
                   <div
