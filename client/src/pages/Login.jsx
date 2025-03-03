@@ -5,6 +5,8 @@ import Axios from "../utils/Axios";
 import AxiosToastError from "../utils/AxiosToastError";
 import toast from "react-hot-toast";
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa6";
+import { setUserDetails } from "../store/userSlice";
+import fetchUserDetails from "../utils/fetchUserDetails";
 
 const Login = () => {
   const [data, setData] = useState({
@@ -43,6 +45,10 @@ const Login = () => {
         toast.success(response.data.message);
         localStorage.setItem("accesstoken", response.data.data.accesstoken);
         localStorage.setItem("refreshToken", response.data.data.refreshToken);
+
+        const userDetails = await fetchUserDetails();
+        dispatch(setUserDetails(userDetails.data));
+        
         setData({
           email: "",
           password: "",
