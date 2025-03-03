@@ -25,9 +25,9 @@ button.cart:hover{
     color: white;
     border: 1px solid wheat;
 }
-/* button.account{
+button.account{
     background-color: #E04F54;
     color: white;
     padding: 5px;
     border-radius: 5px;
-} */
+}
