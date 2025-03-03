@@ -66,7 +66,7 @@ const Register = () => {
 
   };
   return (
-    <section className="w-full container mx-auto px-2">
+    <section className="w-full container mx-auto px-2 pt-20">
   <div className="bg-white my-4 w-full max-w-lg mx-auto rounded flex flex-col p-2">
     <p className="text-center text-lg sm:text-xl">Welcome to Big Bazar!!</p>
     <form className="grid gap-4 mt-6 p-2" onSubmit={handleSubmit}>

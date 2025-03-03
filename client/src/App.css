@@ -31,3 +31,10 @@ button.account{
     padding: 5px;
     border-radius: 5px;
 }
+
+button.account:hover{
+    background-color: #d15256;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+}

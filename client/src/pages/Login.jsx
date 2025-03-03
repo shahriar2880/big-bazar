@@ -7,6 +7,7 @@ import toast from "react-hot-toast";
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa6";
 import { setUserDetails } from "../store/userSlice";
 import fetchUserDetails from "../utils/fetchUserDetails";
+import { useDispatch } from "react-redux";
 
 const Login = () => {
   const [data, setData] = useState({
@@ -15,6 +16,7 @@ const Login = () => {
   });
   const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
+  const dispatch = useDispatch()
   const handleChange = (e) => {
     const { name, value } = e.target;
 
@@ -61,7 +63,7 @@ const Login = () => {
   };
 
   return (
-    <section className="w-full  h-[80vh] container mx-auto px-2">
+    <section className="w-full h-[80vh] container mx-auto px-2 pt-20">
       <div className="bg-white my-4 w-full max-w-lg mx-auto rounded flex flex-col p-2">
         <p className="text-center text-lg font-bold sm:text-xl">Please Login</p>
         <form className="grid gap-4 mt-6 p-2" onSubmit={handleSubmit}>
