@@ -39,11 +39,11 @@ const UserMenu = () => {
       <div className="text-sm">{user.name || user.mobile}</div>
       <Divider />
 
-      <div className="text-sm grid gap-2">
-        <Link to={""} className="px-2">
+      <div className="text-sm grid user-menu">
+        <Link to={""} className="">
           My Order
         </Link>
-        <Link to={""} className="px-2">
+        <Link to={""} className="">
           Save Address
         </Link>
         <button onClick={handleLogout} className="px-2 text-center account">
