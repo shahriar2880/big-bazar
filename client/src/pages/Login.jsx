@@ -79,7 +79,7 @@ const Login = () => {
               name="email"
               value={data.email}
               onChange={handleChange}
-              placeholder="Enter your email"
+              placeholder="Enter Your Email"
             />
           </div>
           {/* Password Input */}
