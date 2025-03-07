@@ -7,7 +7,7 @@ import SummaryApi from "../common/SummaryApi";
 import { logout } from "../store/userSlice";
 import toast from "react-hot-toast";
 
-const UserMenu = () => {
+const UserMenu = ({close}) => {
   const user = useSelector((state) => state.user);
   const dispatch = useDispatch()
    const navigate = useNavigate()

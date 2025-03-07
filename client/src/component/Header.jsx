@@ -24,6 +24,10 @@ const Header = () => {
     navigate("/login");
   };
 
+  const handleCloseUserMenu = ()=>{
+    setOpenUserMenu(false)
+}
+
   // const handleMobileUser = ()=>{
   //     if(!user._id){
   //         navigate("/login")
@@ -84,7 +88,7 @@ const Header = () => {
                   </div>
                   {openUserMenu && (
                     <div className="absolute top-full left-0 z-10 mt-2 min-w-48 rounded-lg bg-white shadow-lg">
-                      <UserMenu user={user} />
+                      <UserMenu close={handleCloseUserMenu} />
                     </div>
                   )}
                 </div>
