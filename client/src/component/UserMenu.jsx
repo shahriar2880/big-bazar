@@ -34,7 +34,7 @@ const UserMenu = ({close}) => {
   };
 
   return (
-    <div className="bg-white text-black p-4 rounded shadow-lg">
+    <div className="bg-white w-full text-black p-4">
       <div className="font-semibold text-xl">My Account</div>
       <div className="text-sm">{user.name || user.mobile}</div>
       <Divider />
