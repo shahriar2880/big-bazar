@@ -34,7 +34,7 @@ const UserMenu = ({close}) => {
   };
 
   return (
-    <div className="bg-white w-full text-black p-4">
+    <div className="bg-white w-full text-black p-4 min-w-[1px]  overflow-visible">
       <div className="font-semibold text-xl">My Account</div>
       <div className="text-sm">{user.name || user.mobile}</div>
       <Divider />
