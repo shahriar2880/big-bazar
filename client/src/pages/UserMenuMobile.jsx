@@ -1,10 +1,11 @@
 import React from 'react'
+import UserMenu from '../component/UserMenu'
 
 const UserMenuMobile = () => {
   return (
-    <div>
-        mobile
-    </div>
+    <section>
+        <UserMenu/>
+    </section>
   )
 }
 
