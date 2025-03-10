@@ -28,14 +28,14 @@ const Header = () => {
     setOpenUserMenu(false)
 }
 
-  // const handleMobileUser = ()=>{
-  //     if(!user._id){
-  //         navigate("/login")
-  //         return
-  //     }
+  const handleMobileUser = ()=>{
+      if(!user._id){
+          navigate("/login")
+          return
+      }
 
-  //     navigate("/user")
-  // }
+      navigate("/user")
+  }
   return (
     //header tag use for seo frendly
     <header className="h-30 w-full min-w-[1px] sticky py-2 px-4 lg:h-22 lg:shadow-md top-0 flex flex-col justify-center gap-1 text-black overflow-visible">
@@ -70,7 +70,7 @@ const Header = () => {
           <div>
             <button
               className="text-neutral-600 lg:hidden"
-              // onClick={handleMobileUser}
+              onClick={handleMobileUser}
             >
               <FaRegCircleUser size={26} />
             </button>
