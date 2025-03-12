@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import logo from "../assets/big-bazar.png";
+import logo from "../assets/amazon.png";
 import "../index.css";
 import "../App.css";
 import Search from "./Search";
@@ -42,20 +42,20 @@ const Header = () => {
       {!(isSearchPage && isMobile) && (
         <div className="container mx-auto flex items-center h-full flexcol justify-between">
           {/* logo */}
-          <div className="h-full">
+          <div className="h-full flex justify-center items-center">
             <Link to={"/"} className="h-full flex justify-center items-center">
               <img
                 src={logo}
                 alt=""
-                height={50}
-                width={80}
+                height={80}
+                width={110}
                 className="hidden lg:block"
               />
               <img
                 src={logo}
                 alt=""
-                height={50}
-                width={80}
+                height={80}
+                width={110}
                 className="lg:hidden"
               />
             </Link>
