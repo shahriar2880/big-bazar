@@ -32,7 +32,7 @@ const PORT = 8080 || process.env.PORT
 app.get("/",(request,response)=>{
     ///server to client
     response.json({
-        message : "Server is running " + PORT
+        message : "Server is running on port " + PORT
     })
 })
 
