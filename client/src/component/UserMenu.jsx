@@ -46,10 +46,10 @@ const UserMenu = ({ close }) => {
       <Divider />
 
       <div className="text-sm grid user-menu">
-        <Link to={""} className="">
+        <Link to={"myorders"} className="">
           My Order
         </Link>
-        <Link to={""} className="">
+        <Link to={"address"} className="">
           Save Address
         </Link>
         <button onClick={handleLogout} className="px-2 text-center account">
