@@ -21,6 +21,13 @@ const Profile = () => {
                 )
             }
         </div>
+        <button onClick={()=>setProfileAvatarEdit(true)} className='text-sm min-w-20 border border-primary-100 hover:border-primary-200 hover:bg-primary-200 px-3 py-1 rounded-full mt-3'>Edit</button>
+        
+        {/* {
+            openProfileAvatarEdit && (
+                <UserProfileAvatarEdit close={()=>setProfileAvatarEdit(false)}/>
+            )
+        } */}
     </div>
   )
 }
