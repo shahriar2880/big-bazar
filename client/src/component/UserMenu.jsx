@@ -33,23 +33,28 @@ const UserMenu = ({ close }) => {
       AxiosToastError(error);
     }
   };
+  const handleClose = async () => {
+    if (close) {
+      close();
+    }
+  }
 
   return (
     <div className="bg-white w-full text-black p-4 min-w-[1px]  overflow-visible">
       <div className="font-semibold text-xl ">My Account</div>
       <div className="text-lg flex items-center gap-2">
         <span className="max-w-52 text-ellipsis line-clamp-1">{user.name || user.mobile}</span>
-        <Link to={"/dashboard/profile"} className="hover:text-primary-200">
+        <Link onClick={handleClose} to={"/dashboard/profile"} className="hover:text-primary-200">
           <HiOutlineExternalLink className="inline-block" />
         </Link>
       </div>
       <Divider />
 
       <div className="text-sm grid user-menu">
-        <Link to={"/dashboard/myorders"} className="">
+        <Link onClick={handleClose} to={"/dashboard/myorders"} className="">
           My Order
         </Link>
-        <Link to={"/dashboard/address"} className="">
+        <Link onClick={handleClose} to={"/dashboard/address"} className="">
           Save Address
         </Link>
         <button onClick={handleLogout} className="px-2 text-center account">
