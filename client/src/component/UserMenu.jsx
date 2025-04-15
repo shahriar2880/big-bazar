@@ -57,15 +57,31 @@ const UserMenu = ({ close }) => {
       <Divider />
 
       <div className="text-sm grid gap-1 user-menu">
+
         <Link onClick={handleClose} to={"/dashboard/product"} className="">
           Product
         </Link>
+
+        <Link onClick={handleClose} to={"/dashboard/product"} className="">
+          Category
+        </Link>
+
+        <Link onClick={handleClose} to={"/dashboard/product"} className="">
+          Sub Category
+        </Link>
+
+        <Link onClick={handleClose} to={"/dashboard/product"} className="">
+          Upload Product
+        </Link>
+        
         <Link onClick={handleClose} to={"/dashboard/myorders"} className="">
           My Order
         </Link>
+
         <Link onClick={handleClose} to={"/dashboard/address"} className="">
           Save Address
         </Link>
+
         <button onClick={handleLogout} className="px-2 text-center account">
           Log Out
         </button>
