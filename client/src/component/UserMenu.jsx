@@ -37,14 +37,20 @@ const UserMenu = ({ close }) => {
     if (close) {
       close();
     }
-  }
+  };
 
   return (
     <div className="bg-white w-full text-black p-4 min-w-[1px]  overflow-visible">
       <div className="font-semibold text-xl ">My Account</div>
       <div className="text-lg flex items-center gap-2">
-        <span className="max-w-52 text-ellipsis line-clamp-1">{user.name || user.mobile}</span>
-        <Link onClick={handleClose} to={"/dashboard/profile"} className="hover:text-primary-200">
+        <span className="max-w-52 text-ellipsis line-clamp-1">
+          {user.name || user.mobile}
+        </span>
+        <Link
+          onClick={handleClose}
+          to={"/dashboard/profile"}
+          className="hover:text-primary-200"
+        >
           <HiOutlineExternalLink className="inline-block" />
         </Link>
       </div>
