@@ -10,8 +10,7 @@ const Dashboard = () => {
                 <div className='sticky max-h-[calc(100vh-96px)] overflow-y-auto hidden lg:block border-r'>
                     <UserMenu/>
                 </div>
-
-
+                
                 {/**right for content */}
                 <div className='bg-white min-h-[75vh]'>
                     <Outlet/>
