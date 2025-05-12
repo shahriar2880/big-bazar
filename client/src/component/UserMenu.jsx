@@ -40,7 +40,7 @@ const UserMenu = ({ close }) => {
   };
 
   return (
-    <div className="bg-white w-full text-black min-w-[1px]  overflow-visible p-4">
+    <div className=" bg-white w-full text-black min-w-[1px]  overflow-visible p-4">
       <div className="font-semibold text-xl ">My Account</div>
       <div className="text-lg flex items-center gap-2">
         <span className="max-w-52 text-ellipsis line-clamp-1">
@@ -82,7 +82,7 @@ const UserMenu = ({ close }) => {
           Save Address
         </Link>
 
-        <button onClick={handleLogout} className="px-2 text-center account">
+        <button onClick={handleLogout} className="p-3 text-center account">
           Log Out
         </button>
       </div>
